@@ -28,14 +28,14 @@ jobs:
         node-version: 12
    
     - uses: borales/actions-yarn@v2.0.0
-        with:
+      with:
           cmd: install # will run `yarn install` command
           
     - name: Build React app
       run: npm install --global surge
       
     - name: deploy to surge
-      run: surge ./build project002.surge.su ${{secrets.SURGE_TOKEN}}
+      run: surge ./build project002.surge.su ${{ secrets.SURGE_TOKEN }}
              
     # Runs a single command using the runners shell
     - name: Run a one-line script
